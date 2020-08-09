@@ -1,0 +1,34 @@
+<h3>{{parameter}} Employee</h3>
+<div class="container">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="employeeName"> Employee Name </label>
+      <input type="text" class="form-control" name="employeeName" formControlName="employeeName" pattern="^[a-zA-Z]">
+      <span *ngIf="employeeForm.controls['employeeName'].invalid && employeeForm.controls['employeeName'].touched" class="text-muted">Empoyee name is reqiured</span>
+    </div>
+    <div class="form-group">
+      <label for="employeeAge"> Employee Age </label>
+      <input type="text" class="form-control" name="employeeAge" formControlName="employeeAge" required>
+      <span *ngIf="employeeForm.controls['employeeAge'].invalid && employeeForm.controls['employeeAge'].touched" class="text-muted">Empoyee name is reqiured</span>
+    </div>
+    <div class="form-group">
+      <label for="employeeDOB"> Employee DOB</label>
+      <input type="date" class="form-control" name="employeeDOB" formControlName="employeeDOB" required>
+      <span *ngIf="employeeForm.controls['employeeDOB'].invalid && employeeForm.controls['employeeDOB'].touched" class="text-muted">Empoyee name is reqiured</span>
+    </div>
+    <div class="form-group">
+      <label for="employeeStatus"> Employee Status</label>
+      <select type="text" class="form-control" name="employeeStatus" formControlName="employeeStatus" required >
+        <option value=""></option>
+        <option *ngFor="let item of status" [value]="item.data">{{item.data}}</option>
+      </select>
+      <span *ngIf="employeeForm.controls['employeeStatus'].invalid && employeeForm.controls['employeeStatus'].touched" class="text-muted">Empoyee name is reqiured</span>
+    </div>
+    <div class="form-group">
+      <label for="employeeRemark"> Remarks</label>
+      <input type="text" class="form-control" name="employeeRemark" formControlName="employeeRemark" required>
+      <span *ngIf="employeeForm.controls['employeeRemark'].invalid && employeeForm.controls['employeeRemark'].touched" class="text-muted">Empoyee name is reqiured</span>
+    </div>
+    <button class="btn btn-rpimary" [disabled]="employeeForm.invalid">Submit</button>
+  </form>
+</div>
