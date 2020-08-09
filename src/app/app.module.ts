@@ -11,6 +11,7 @@ import { ViewEmployeeComponent } from './employee/viewEmployee/viewEmployee.comp
 import { CurrentEmployeeComponent } from './employee/currentEmployee/currentEmployee.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HighlightDirective } from './highlight-directive';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,RouterModule.forRoot(routes),ReactiveFormsModule,HttpClientModule],
-  declarations: [ AppComponent, HelloComponent,LoginComponent,WelcomeComponent,ViewEmployeeComponent,CurrentEmployeeComponent, PageNotFoundComponent],
+  declarations: [ AppComponent, HelloComponent,LoginComponent,WelcomeComponent,ViewEmployeeComponent,CurrentEmployeeComponent, PageNotFoundComponent,HighlightDirective],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
